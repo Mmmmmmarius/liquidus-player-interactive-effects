@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Reveal a second image through a fluid trail. A self-contained parameter playground.">
+<title>Fluid reveal · Playground</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23000000'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%23f3f0ea'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="./playground.css"><script type="importmap">{"imports":{"three":"../vendor/three.module.js"}}</script><script type="module" src="./app.js"></script></head>
+<body><a class="skip" href="#inspector">Skip to parameters</a>
+<header class="masthead"><div><h1>Fluid reveal</h1><p class="subtitle">Reveal a second image through a fluid trail.</p></div><span class="local-badge">Local playground</span></header>
+<main class="workspace"><section class="stage-column" aria-label="Effect preview">
+<div class="stage-tools"><div class="button-row"><button class="primary" id="pause" aria-pressed="false">Pause motion</button><button id="reset">Restore defaults</button></div><label class="toggle"><input id="auto-motion" type="checkbox" checked>Animate pointer</label></div>
+<div class="stage"><canvas id="canvas" tabindex="0" role="img" aria-label="Fluid reveal interactive preview">This demo needs a browser with WebGL 2 support.</canvas>
+<div class="error" id="error" role="alert" hidden><p id="error-message"></p><button id="reload">Reload demo</button></div></div>
+<div class="stage-caption"><p>Move across the canvas to paint a reveal. Auto motion provides a hands-free example. Use Full reveal to compare the two layers.</p><span id="motion-state" class="pill">Motion running</span></div>
+</section><aside class="inspector" id="inspector" aria-label="Parameter inspector"><h2>Make it your own.</h2>
+<div class="field"><label for="preset">Starting point</label><select id="preset"></select></div>
+<div class="section"><h2>Source image</h2><div class="sample-row"><button data-sample="0" aria-pressed="true">Tidal</button><button data-sample="1" aria-pressed="false">Orbit</button><button data-sample="2" aria-pressed="false">Paper</button></div><div class="upload-row" id="uploads"></div>
+<p class="small">PNG, JPEG or WebP, up to 15 MB. Images stay in this tab. No uploads, tracking or remote assets.</p></div>
+<div id="parameters"></div><div id="scene-controls" class="scene-controls"></div>
+<details class="section"><summary>Save &amp; load parameters</summary>
+<div class="button-row"><button id="export">Export JSON</button><button id="show-json">Read current values</button></div>
+<div class="file-control"><label for="import">Import a parameter file</label><input id="import" type="file" accept="application/json,.json"></div>
+<label for="json" class="small">Or edit the JSON below.</label><textarea id="json" class="json-editor" spellcheck="false" aria-label="Parameter JSON"></textarea><button id="apply-json">Apply JSON</button>
+<p class="small">Exports contain effect parameters only. Images, filenames and demo object positions are excluded.</p></details>
+<p id="status" class="status" role="status" aria-live="polite"></p>
+<footer class="footer"><a href="../README.md">Read the guide</a><a href="../LICENSE">MIT license</a><p>Self-contained source. No build step.</p></footer>
+</aside></main></body></html>
